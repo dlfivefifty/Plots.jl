@@ -16,6 +16,7 @@ function weave(x,y; ordering = Vector[x,y])
     for o in ordering
       try
           push!(ret, shift!(o))
+      catch
       end
       # try
       #     push!(ret, shift!(y))
@@ -162,6 +163,7 @@ function stroke(args...; alpha = nothing)
     elseif T <: @compat Union{Symbol,AbstractString}
       try
         color = parse(Colorant, string(arg))
+      catch
       end
     elseif typeof(arg) <: Real
       width = arg
@@ -195,6 +197,7 @@ function brush(args...; alpha = nothing)
     elseif T <: @compat Union{Symbol,AbstractString}
       try
         color = parse(Colorant, string(arg))
+      catch
       end
     elseif typeof(arg) <: Real
       size = arg
