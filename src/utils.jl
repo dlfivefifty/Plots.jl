@@ -141,6 +141,7 @@ function _expand_limits(lims, x)
     lims[2] = max(lims[2], e2)
   # catch err
   #   warn(err)
+  catch
   end
   nothing
 end

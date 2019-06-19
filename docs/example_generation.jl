@@ -187,6 +187,7 @@ function generate_markdown(pkgname::Symbol)
   # mkdir if necessary
   try
     mkdir("$IMGDIR/$pkgname")
+  catch
   end
 
   # open the markdown file
